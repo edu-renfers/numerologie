@@ -17,7 +17,7 @@ function carReduction (car) {
   var retour = 0
   // il faut mettre le caractère en majuscule, puis trouver son index (position) dans alphabet, puis réduire ce nombre et le retourner
 
-  if () {
+  if (retour) {
 
   }
   return retour
@@ -32,50 +32,74 @@ function motReduction(mot){
   return retour
 }
 
-// "expression" calcule le nombre d'expression qui est la réduction (en un chiffre) des prénoms et nom de famille
+// implémentation objet de Numerologie sous forme d'une classe
 
-function expression(nom){
-  var retour = 0
+class Numerologie {
+  constructor (prenoms,nom,jour,mois,annee) {
+    this.prenoms = prenoms
+    this.nom = nom
+    this.jour = jour
+    this.mois = mois
+    this.annee = annee
+  }
+  // "expression" calcule le nombre d'expression qui est la réduction (en un chiffre) des prénoms et nom de famille
 
-  return retour
+  expression(){
+    var retour = 0
+
+    return retour
+  }
+
+  // "actif" est la réduction des prénoms
+
+  actif(){
+    var retour = 0
+
+    return retour
+  }
+
+  // "hereditaire" est la réduction du nom de famille
+
+  hereditaire(){
+    var retour = 0
+
+    return retour
+  }
+
+  // "realisation" est la réduction des consonnes du nom complet (prénoms et nom de famille)
+
+  realisation(){
+    var retour = 0
+
+    return retour
+  }
+
+  // "intime" est la réduction des voyelles du nom complet
+
+  intime(){
+    var retour = 0
+
+    return retour
+  }
+
+  // "vie" ou chemin de vie est la réduction de la date de naissance
+
+  vie(){
+    var retour = 0
+
+    return retour
+  }
+
 }
 
-// "actif" est la réduction des prénoms
-
-function actif(prenoms){
-  var retour = 0
-
-  return retour
-}
-
-// "hereditaire" est la réduction du nom de famille
-
-function hereditaire(nom){
-  var retour = 0
-
-  return retour
-}
-
-// "realisation" est la réduction des consonnes du nom complet (prénoms et nom de famille)
-
-function realisation(nom){
-  var retour = 0
-
-  return retour
-}
-
-// "intime" est la réduction des voyelles du nom complet
-
-function intime(nom){
-  var retour = 0
-
-  return retour
-}
-
-// "vie" ou chemin de vie est la réduction de la date de naissance
-
-function vie(naissance){
-  var retour = 0
-
-  return retour
-}
+var personne = new Numerologie('Serge Alexandre','Renfer','20','10','1960')
+console.log(`personne : 
+Prénom : ${personne.prenoms}
+Nom : ${personne.nom}
+Nombre d'expression : ${personne.expression()}
+Nombre actif : ${personne.actif()}
+Nombre héréditaire : ${personne.hereditaire()}
+Nombre de réalisation : ${personne.realisation()}
+Nombre intime : ${personne.intime()}
+Nombre de vie : ${personne.vie()}
+` )
