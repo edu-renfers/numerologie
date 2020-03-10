@@ -7,6 +7,31 @@
     <link href="style.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
+    <div id="app">
+      <p><input placeholder="Prénoms" v-model="prenoms">
+      </p>
+       <p><input placeholder="Nom de famille" v-model="nom">
+      </p>
+       <p><input placeholder="jour de naissance" v-model="jour">
+       /
+       <input placeholder="mois de naissance" v-model="mois">
+       /
+       <input placeholder="année de naissance" v-model="annee">
+      </p>
+      <h1>Numérologie pour </h1>
+      <h2>{{ prenoms }} {{ nom }}</h2>
+      <ul>
+        <li>Nombre d'expression : {{expression}}</li>
+        <li>Nombre actif : {{actif}}</li>
+        <li>Nombre héréditaire : {{hereditaire}}</li>
+        <li>Nombre de réalisation : {{realisation}}</li>
+        <li>Nombre intime : {{intime}}</li>
+        <li>Nombre de vie : {{vie}}</li>
+      </ul>
+      
+    </div>
+     
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>  
     <script src="script.js"></script>
   </body>
 </html>

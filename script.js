@@ -32,74 +32,35 @@ function motReduction(mot){
   return retour
 }
 
-// implémentation objet de Numerologie sous forme d'une classe
+// implémentation avec Vuejs
 
-class Numerologie {
-  constructor (prenoms,nom,jour,mois,annee) {
-    this.prenoms = prenoms
-    this.nom = nom
-    this.jour = jour
-    this.mois = mois
-    this.annee = annee
+var app = new Vue({
+  el: '#app',
+  data: {
+    nom: '',
+    prenoms: '',
+    jour: 20,
+    mois: 10,
+    annee: 1960
+  },
+  computed: {
+    expression : function(){
+
+    },
+    actif : function(){
+
+    },
+    hereditaire : function(){
+
+    },
+    realisation : function(){
+
+    },
+    intime : function(){
+
+    },
+    vie : function(){
+      return reduction(this.jour + this.mois + this.annee)
+    }
   }
-  // "expression" calcule le nombre d'expression qui est la réduction (en un chiffre) des prénoms et nom de famille
-
-  expression(){
-    var retour = 0
-
-    return retour
-  }
-
-  // "actif" est la réduction des prénoms
-
-  actif(){
-    var retour = 0
-
-    return retour
-  }
-
-  // "hereditaire" est la réduction du nom de famille
-
-  hereditaire(){
-    var retour = 0
-
-    return retour
-  }
-
-  // "realisation" est la réduction des consonnes du nom complet (prénoms et nom de famille)
-
-  realisation(){
-    var retour = 0
-
-    return retour
-  }
-
-  // "intime" est la réduction des voyelles du nom complet
-
-  intime(){
-    var retour = 0
-
-    return retour
-  }
-
-  // "vie" ou chemin de vie est la réduction de la date de naissance
-
-  vie(){
-    var retour = 0
-
-    return retour
-  }
-
-}
-
-var personne = new Numerologie('Serge Alexandre','Renfer','20','10','1960')
-console.log(`personne : 
-Prénom : ${personne.prenoms}
-Nom : ${personne.nom}
-Nombre d'expression : ${personne.expression()}
-Nombre actif : ${personne.actif()}
-Nombre héréditaire : ${personne.hereditaire()}
-Nombre de réalisation : ${personne.realisation()}
-Nombre intime : ${personne.intime()}
-Nombre de vie : ${personne.vie()}
-` )
+})
