@@ -16,12 +16,13 @@ function carReduction (car) {
   //l'index du caractère retourne son nombre qu'il faut réduire par la suite (espace = 0)
   var retour = 0
   // il faut mettre le caractère en majuscule, puis trouver son index (position) dans alphabet, puis réduire ce nombre et le retourner
-
-  if (retour) {
-
+  let pos = alphabet.indexOf(car.toUpperCase())
+  if (pos>0) {
+    retour = pos
   }
-  return retour
+  return reduction(retour)
 }
+
 
 // "motReduction" transforme un mot en un nombre réduit
 
@@ -45,21 +46,63 @@ var app = new Vue({
   },
   computed: {
     expression : function(){
-
+      // "expression" calcule le nombre d'expression qui est la réduction (en un chiffre) des prénoms et nom de famille
+      var retour = 0
+      var eclate = Array.from(this.nom + this.prenoms)
+      eclate.forEach(function (element){
+        retour += carReduction(element)
+      })
+      return reduction(retour)
     },
     actif : function(){
+      // "actif" est la réduction des prénoms
+      var retour = 0
+      var eclate = Array.from(this.prenoms)
+      eclate.forEach(function (element){
+        retour += carReduction(element)
+      })
+      return reduction(retour)
 
     },
     hereditaire : function(){
+      // "hereditaire" est la réduction du nom de famille
+      var retour = 0
+      var eclate = Array.from(this.nom)
+      eclate.forEach(function (element){
+        retour += carReduction(element)
+      })
+      return reduction(retour)
 
     },
     realisation : function(){
+      // "realisation" est la réduction des consonnes du nom complet (prénoms et nom de famille)
+      var retour = 0
+      const voyelles = 'AEIOUY'
+      var eclate = Array.from(this.nom + this.prenoms)
+      eclate.forEach(function (element){
+        if (voyelles.indexOf(element.toUpperCase())==-1) {
+          retour += carReduction(element)
+        } 
+      })
+      return reduction(retour)
+
 
     },
     intime : function(){
+      // "intime" est la réduction des voyelles du nom complet
+      var retour = 0
+      const voyelles = 'AEIOUY'
+      var eclate = Array.from(this.nom + this.prenoms)
+      eclate.forEach(function (element){
+        if (voyelles.indexOf(element.toUpperCase())>-1) {
+          retour += carReduction(element)
+        } 
+      })
+      return reduction(retour)
 
     },
     vie : function(){
+      // "vie" ou chemin de vie est la réduction de la date de naissance
       return reduction(this.jour + this.mois + this.annee)
     }
   }
