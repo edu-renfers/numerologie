@@ -29,6 +29,29 @@
         <li>Nombre de vie : {{vie}}</li>
       </ul>
       
+      <div id="interpretation">
+        <h3>Nombre d'expression</h3>
+        <div id="expr-1" v-show="expression===1" v-bind:key="expression">Expression 1
+        </div>
+        <div id="expr-2" v-show="expression===2" v-bind:key="expression">Expression 2
+        </div>
+        <div id="expr-3" v-show="expression===3" v-bind:key="expression">Expression 3
+        </div>
+        <div id="expr-4" v-show="expression===4" v-bind:key="expression">Expression 4
+        </div>
+        <div id="expr-5" v-show="expression===5" v-bind:key="expression">Expression 5
+        </div>
+        <div id="expr-6" v-show="expression===6" v-bind:key="expression">Expression 6
+        </div>
+        <div id="expr-7" v-show="expression===7" v-bind:key="expression">Expression 7
+        </div>
+        <div id="expr-8" v-show="expression===8" v-bind:key="expression">Expression 8
+        </div>
+        <div id="expr-9" v-show="expression===9" v-bind:key="expression">Expression 9
+        </div>
+         <h3>Nombre actif {{ actif }}</h3>
+         <div id="nb_actif">{{ inter_actif[actif]}}</div>
+      </div>
     </div>
      
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>  

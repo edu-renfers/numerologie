@@ -42,7 +42,18 @@ var app = new Vue({
     prenoms: '',
     jour: 20,
     mois: 10,
-    annee: 1960
+    annee: 1960,
+    inter_actif : {
+      1: "Actif 1",
+      2: "Actif 2",
+      3: "Actif 3",
+      4: "Actif 4",
+      5: "Actif 5",
+      6: "Actif 6",
+      7: "Actif 7",
+      8: "Actif 8",
+      9: "Actif 9",
+    }
   },
   computed: {
     expression : function(){
